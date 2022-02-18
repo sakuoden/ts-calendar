@@ -1,4 +1,16 @@
 {
+  "name": "ts-calendar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:sakuoden/ts-calendar.git",
+  "author": "Daisuke Sakusabe",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^4.5.5"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "jest": "^27.5.1",

@@ -29,6 +29,8 @@ class Calendar {
     return new Calendar(year, month, result);
   }
 
+  public static from = (year: number, month: number): Calendar => Calendar.of(Year.of(year), Month.of(month));
+
   public static ofThisMonth = (): Calendar => Calendar.of(Year.thisYear(), Month.thisMonth());
 
   public nextMonth = (): Calendar => {
