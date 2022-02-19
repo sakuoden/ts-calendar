@@ -29,18 +29,18 @@ class Calendar {
     return new Calendar(year, month, result);
   }
 
-  public static from = (year: number, month: number): Calendar => Calendar.of(Year.of(year), Month.of(month));
+  public static createFrom = (year: number, month: number): Calendar => Calendar.of(Year.of(year), Month.of(month));
 
   public static ofThisMonth = (): Calendar => Calendar.of(Year.thisYear(), Month.thisMonth());
 
   public nextMonth = (): Calendar => {
-    if (this.month.isDecember()) Calendar.of(this.year.nextYear(), Month.january());
+    if (this.month.isDecember()) return  Calendar.of(this.year.nextYear(), Month.january());
 
     return Calendar.of(this.year, this.month.nextMonth());
   }
 
   public lastMonth = (): Calendar => {
-    if (this.month.isJanuary()) Calendar.of(this.year.lastYear(), Month.december());
+    if (this.month.isJanuary()) return  Calendar.of(this.year.lastYear(), Month.december());
 
     return Calendar.of(this.year, this.month.lastMonth());
   }
