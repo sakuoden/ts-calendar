@@ -1,5 +1,4 @@
 import Calendar from '../src/model/calendar/Calendar';
-import CalendarWeek from '../src/model/calendar/CalendarWeek';
 
 test('2022年1月のカレンダー', () => {
   const thisMonth: Calendar = Calendar.createFrom(2022, 1);

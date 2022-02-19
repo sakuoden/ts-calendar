@@ -11,7 +11,7 @@ This is a very small TypeScript module to represent a calendar.
 
 [example: 2022/1 Calendar]
 
-| 2022/1 Calendar             |
+| 2022/1 Calendar object      |
 |-----------------------------|
 | CalendarWeek object (Week1) |
 | CalendarWeek object (Week2) |
@@ -22,14 +22,14 @@ This is a very small TypeScript module to represent a calendar.
 
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 
-| Sun                 | Mon                 | Tue                 | Wed                 | Thu                 | Fri                 | Sat                 |
-|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
-| CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+|                             | Sun                 | Mon                 | Tue                 | Wed                 | Thu                 | Fri                 | Sat                 |
+|-----------------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|
+| CalendarWeek object (Week1) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+| CalendarWeek object (Week2) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+| CalendarWeek object (Week3) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+| CalendarWeek object (Week4) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+| CalendarWeek object (Week5) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
+| CalendarWeek object (Week6) | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object | CalenderDate object |
 
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 
@@ -48,6 +48,8 @@ This is a very small TypeScript module to represent a calendar.
 
 ### 2.1 - Usage1 
 
+[example: If today is January 2022]
+
 ```typescript
 const thisMonth: Calendar = Calendar.ofThisMonth();
 const weeks: CalendarWeek[] = thisMonth.getWeeks();
@@ -61,15 +63,18 @@ weeks.forEach(week => {
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 
 ```shell
+|26|27|28|29|30|31|1|
+|2|3|4|5|6|7|8|
+|9|10|11|12|13|14|15|
+|16|17|18|19|20|21|22|
+|23|24|25|26|27|28|29|
 |30|31|1|2|3|4|5|
-|6|7|8|9|10|11|12|
-|13|14|15|16|17|18|19|
-|20|21|22|23|24|25|26|
-|27|28|1|2|3|4|5|
 ```
 
 
 ### 2.2 - Usage2
+
+[example: If today is January 2022]
 
 ```typescript
 const thisMonth: Calendar = Calendar.ofThisMonth();
@@ -84,11 +89,12 @@ weeks.forEach(week => {
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 
 ```shell
-|1|2|3|4|5|
-|6|7|8|9|10|11|12|
-|13|14|15|16|17|18|19|
-|20|21|22|23|24|25|26|
-|27|28|
+|1|
+|2|3|4|5|6|7|8|
+|9|10|11|12|13|14|15|
+|16|17|18|19|20|21|22|
+|23|24|25|26|27|28|29|
+|30|31|
 ```
 
 
@@ -117,7 +123,9 @@ weeks.forEach(week => {
 
 ### 3.3 - CalendarDate 
 
-| Type   | Method     | Description                |
-|--------|------------|----------------------------|
-| number | toNumber() | Get the date of Calendar.  |
-| number | toMonth()  | Get the month of Calendar. |
+| Type    | Method     | Description                 |
+|---------|------------|-----------------------------|
+| number  | toNumber() | Get the date of Calendar.   |
+| number  | toMonth()  | Get the month of Calendar.  |
+| boolean | isToday()  | Check if the date is today. |
+

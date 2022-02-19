@@ -32,6 +32,8 @@ class CalendarDate {
     return true;
   }
 
+  public isToday = (): boolean => this.sameDate(CalendarDate.today());
+
   public dayOfWeek = (): DayOfWeek => DayOfWeek.from(this.value);
 
   public yesterday = (): CalendarDate => {
