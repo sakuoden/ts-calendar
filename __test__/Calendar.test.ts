@@ -45,3 +45,38 @@ test("2020年1月の前の月のカレンダー", () => {
     "2021年12月26日,2021年12月27日,2021年12月28日,2021年12月29日,2021年12月30日,2021年12月31日,2022年1月1日"
   );
 });
+
+test("2022年1月の来年のカレンダー", () => {
+  const thisMonth: Calendar = Calendar.createFrom(2022, 1 );
+  const nextYearCalendar: Calendar = thisMonth
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+    .nextMonth()
+
+  expect(nextYearCalendar.getYear()).toBe(2023);
+  expect(nextYearCalendar.getMonth()).toBe(1);
+
+  const january2023Weeks: string[] = nextYearCalendar.getWeeks().map(week => {
+    const weekDates: string[] = week.getDates().map(date => date.toJapaneseString());
+    return weekDates.join(",");
+  });
+
+  const actual: string = january2023Weeks.join("|\n");
+
+  expect(actual).toBe(
+    "2023年1月1日,2023年1月2日,2023年1月3日,2023年1月4日,2023年1月5日,2023年1月6日,2023年1月7日|\n" +
+    "2023年1月8日,2023年1月9日,2023年1月10日,2023年1月11日,2023年1月12日,2023年1月13日,2023年1月14日|\n" +
+    "2023年1月15日,2023年1月16日,2023年1月17日,2023年1月18日,2023年1月19日,2023年1月20日,2023年1月21日|\n" +
+    "2023年1月22日,2023年1月23日,2023年1月24日,2023年1月25日,2023年1月26日,2023年1月27日,2023年1月28日|\n" +
+    "2023年1月29日,2023年1月30日,2023年1月31日,2023年2月1日,2023年2月2日,2023年2月3日,2023年2月4日"
+  );
+})
