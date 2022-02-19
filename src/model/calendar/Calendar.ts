@@ -45,6 +45,8 @@ class Calendar {
     return Calendar.of(this.year, this.month.lastMonth());
   }
 
+  public isThisMonth = (month: Month): boolean => this.month.same(month);
+
   public getYear = (): number => this.year.toNumber();
 
   public getMonth = (): number => this.month.toNumber();

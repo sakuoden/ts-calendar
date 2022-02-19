@@ -1,4 +1,5 @@
 import Calendar from '../src/model/calendar/Calendar';
+import CalendarWeek from '../src/model/calendar/CalendarWeek';
 
 test('2022年1月のカレンダー', () => {
   const thisMonth: Calendar = Calendar.createFrom(2022, 1);
@@ -79,4 +80,4 @@ test("2022年1月の来年のカレンダー", () => {
     "2023年1月22日,2023年1月23日,2023年1月24日,2023年1月25日,2023年1月26日,2023年1月27日,2023年1月28日|\n" +
     "2023年1月29日,2023年1月30日,2023年1月31日,2023年2月1日,2023年2月2日,2023年2月3日,2023年2月4日"
   );
-})
+});

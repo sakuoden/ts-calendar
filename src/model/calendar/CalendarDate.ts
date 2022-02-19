@@ -48,13 +48,15 @@ class CalendarDate {
     return new CalendarDate(result);
   }
 
-  public year = (): Year => Year.of(this.value.getFullYear());
+  public toYear = (): Year => Year.of(this.value.getFullYear());
 
-  public month = (): Month => Month.of(this.value.getMonth() + 1);
+  public toMonth = (): Month => Month.of(this.value.getMonth() + 1);
 
-  public date = (): number => this.value.getDate();
+  public toNumber = (): number => this.value.getDate();
 
-  public toJapaneseString = () => `${this.year().toNumber()}年${this.month().toNumber()}月${this.date()}日`;
+  public toJapaneseString = () => `${this.toYear().toNumber()}年${this.toMonth().toNumber()}月${this.toNumber()}日`;
+
+  public toString = (): string => this.toNumber().toString();
 }
 
 export default CalendarDate;

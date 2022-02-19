@@ -19,6 +19,8 @@ class Month {
   public static january = (): Month => new Month(1);
   public static december = (): Month => new Month(12);
 
+  public same = (otherMonth: Month): boolean => this.value === otherMonth.value;
+
   public isJanuary = (): boolean => this.value === 1;
   public isDecember = (): boolean => this.value === 12;
 
